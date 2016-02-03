@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weathereather</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- Needed for Cordova/PhoneGap (will be a 404 during development) -->
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="cordova.js"></script>
+  </head>
+
+  <body ng-app="weather">
+      <ion-header-bar class="bar-dark">
+        <!--  <button class="button butto-icon" ng-click="toggleProjects()">
+              <i class="icon ion-navicon"></i>
+            </button>-->
+        <h1 class="title">
+          <emi>Wenham, MA
+          </emi>
+        </h1>
+      </ion-header-bar>
+
+      <ion-content class="background_color" ng-controller="HomeCtrl" scroll="true">
+        <ion-slide-box show-pager="false">
+          <ion-slide>
+            <div class="row">
+              <div class="col-100">
+                <h2 sytle="font-size = 200%">
+                  {{currentDate}}
+                </h2>
+                <h2>
+                  {{summary}}
+                </h2>
+                <br><br>
+                <h2>
+                  Humidity:
+                  {{humidity}}%
+                  <br>
+                  wind-speed:
+                  {{windSpeed}}
+                  mph
+                  <br>
+                  Percipitation:
+                  {{precipProbability}}%
+                  <br>
+                </h2>
+                <br>
+                <br>
+                <br>
+                <br><br>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <img ng-src="{{currentPicture}}" height="75%" width="75%">
+              </div>
+              <div class="col-50">
+                <h2 "text-align: right;">
+                  <br>
+                  <br>
+                  <font size="200%">
+                    {{currentTemp}}
+                    °F
+                  </font>
+                </h2>
+              </div>
+            </div>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="list item-text-wrap">
+
+            <br>
+            <h2 class="mid">Hourly Forcast</h2><br>
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{hour1pic}}" height="100" width="100">
+              <h2>{{hour1}}</h2>
+
+            </span>
+
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{hour2pic}}" height="100" width="100">
+              <h2>{{hour2}}</h2>
+
+            </span>
+
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{hour3pic}}" height="100" width="100">
+              <h2>{{hour3}}</h2>
+
+            </span>
+
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{hour4pic}}" height="100" width="100">
+              <h2>{{hour4}}</h2>
+
+            </span>
+
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{hour5pic}}" height="100" width="100">
+              <h2>{{hour5}}</h2>
+
+            </span>
+
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{hour6pic}}" height="100" width="100">
+              <h2>{{hour6}}</h2>
+            </span>
+
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{hour7pic}}" height="100" width="100">
+              <h2>{{hour7}}</h2>
+
+            </span>
+
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{hour8pic}}" height="100" width="100">
+              <h2>{{hour8}}</h2>
+
+            </span>
+
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{hour9pic}}" height="100" width="100">
+              <h2>{{hour9}}</h2>
+
+            </span>
+
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{hour10pic}}" height="100" width="100">
+              <h2>{{hour10}}</h2>
+
+            </span>
+
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{hour11pic}}" height="100" width="100">
+              <h2>{{hour11}}</h2>
+
+            </span>
+
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{hour12pic}}" height="100" width="100">
+              <h2>{{hour12}}</h2>
+
+            </span>
+
+          </div>
+
+        </ion-slide>
+        <ion-slide>
+          <br>
+          <h2 class="mid">The 7 Day Forcast
+          </h2><br>
+          <div class="list item-text-wrap">
+
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{day1pic}}" height="100" width="100">
+              <h2>{{day1}}</h2>
+
+            </span>
+
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{day2pic}}" height="100" width="100">
+              <h2>{{day2}}</h2>
+
+            </span>
+
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{day3pic}}" height="100" width="100">
+              <h2>{{day3}}</h2>
+
+            </span>
+
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{day4pic}}" height="100" width="100">
+              <h2>{{day4}}</h2>
+
+            </span>
+
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{day5pic}}" height="100" width="100">
+              <h2>{{day5}}</h2>
+
+            </span>
+
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{day6pic}}" height="100" width="100">
+              <h2>{{day6}}</h2>
+
+            </span>
+
+            <span class="item item-avatar" href="#">
+              <img ng-src="{{day7pic}}" height="100" width="100">
+              <h2>{{day7}}</h2>
+
+            </span>
+
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+      <!--  <ion-footer-bar class="bar-dark">
+              <h2 class="title">
+                <emi>Current Weather
+                </emi>
+              </h2>
+            </ion-footer-bar>-->
+
+    </ion-content>
+
+  </div>
+
+</body>
+
+</html>

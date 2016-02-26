@@ -1,14 +1,33 @@
 var app = angular.module('weather', ['ionic']);
 
+app.controller('MyController', function($scope, $http) {
+  $scope.items = [1,2,3];
+  $scope.doRefresh = function() {
+    $http.get('/new-items')
+     .success(function(newItems) {
+       $scope.items = newItems;
+     })
+     .finally(function() {
+       // Stop the ion-refresher from spinning
+       $scope.$broadcast('scroll.refreshComplete');
+     });
+  };
+});
 
+function ContentController($scope, $ionicSideMenuDelegate) {
+  $scope.toggleLeft = function() {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
+}
 app.controller('HomeCtrl', function($scope, weatherService) {
 
-  
+
 
   weatherService.get().then(function(response) {
+    $scope.weather = response.data;
 
 
-//got this idea from stack overflow but couldn't find the link
+    //got this idea from stack overflow but couldn't find the link
     var monthNames = [
       "January", "February", "March",
       "April", "May", "June", "July",
@@ -31,8 +50,6 @@ app.controller('HomeCtrl', function($scope, weatherService) {
     var monthIndex = currentTime.getMonth();
     var fullDate = (numDay + ", " + monthNames[monthIndex]);
 
-    console.log(day);
-
     function time(x) {
       var newTime = x + hour;
       if (newTime > 12) {
@@ -49,6 +66,22 @@ app.controller('HomeCtrl', function($scope, weatherService) {
       }
 
     }
+    function dayOrNight(){
+      var timeOfDay;
+      if($scope.weather.daily.time >= $scope.weather.daily.data[0].sunsetTime){
+        timeOfDay = "night";
+      }
+      else if($scope.weather.daily.time < $scope.weather.daily.data[0].sunriseTime) {
+        timeOfDay = "night";
+      }
+      else{
+          timeOfDay = "day";
+      }
+      return( "img/"+ timeOfDay + ".jpg");
+    }
+    $scope.backGroundPic = dayOrNight();
+console.log($scope.backGroundPic);
+
     // got the idea from stack overflow: http://stackoverflow.com/questions/14657378/how-to-set-x-number-of-days-in-the-future-using-javascript
 
     function dayOfTheWeek(x) {
@@ -59,13 +92,13 @@ app.controller('HomeCtrl', function($scope, weatherService) {
       var newDay = days[addDay];
       return (newDay);
     }
-    console.log(dayOfTheWeek(6));
+
 
 
     $scope.currentDate = fullDate;
 
 
-    $scope.weather = response.data;
+
     console.log($scope.weather);
     $scope.icon = $scope.weather.currently.icon;
     $scope.currentTemp = Math.round($scope.weather.currently.temperature);
@@ -115,7 +148,7 @@ app.controller('HomeCtrl', function($scope, weatherService) {
       $scope.weather.daily.data[7].summary;
 
 
-//adam helped me get this working
+    //adam helped me get this working
     $scope.currentPicture = "img/" + $scope.icon + ".png";
     $scope.hour1pic = "img/" + $scope.weather.hourly.data[1].icon + ".png";
     $scope.hour2pic = "img/" + $scope.weather.hourly.data[2].icon + ".png";

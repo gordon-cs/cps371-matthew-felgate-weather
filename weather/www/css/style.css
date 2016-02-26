@@ -1,9 +1,13 @@
 /*http://stackoverflow.com/questions/11777598/font-size-relative-to-the-users-screen-resolution
 http://stackoverflow.com/questions/24933858/how-to-customize-font-size-in-ionic-framework*/
-ion-content{
-  background: url("night.jpg");
-  background-repeat:no-repeat;
-  background-size:cover;
+.background {
+
+
+}
+
+
+ion-popover-view{
+opacity: 1;
 
 }
 .col {

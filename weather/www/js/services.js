@@ -6,10 +6,11 @@ app.service("weatherService", function ($http) {
       lat: "42.6042", // INSERT LATITUDE HERE
       long: "-70.8868" // INSERT LONGITUDE HERE
     };
-    var URL = "https://api.forecast.io/forecast/" +
-              API_KEY + "/" + COORDS.lat + "," + COORDS.long +  "?callback=JSON_CALLBACK"; // Request JSON-P response
+    //var URL = "https://api.forecast.io/forecast/" +
+      //        API_KEY + "/" + COORDS.lat + "," + COORDS.long +  "?callback=JSON_CALLBACK"; // Request JSON-P response
+    var URL = 'http://matthew-felgate-server.appspot.com/?';
 
     this.get = function () {
-        return $http.jsonp(URL);
+        return $http.get(URL);
     };
 });

@@ -1,0 +1,148 @@
+/*http://stackoverflow.com/questions/11777598/font-size-relative-to-the-users-screen-resolution
+http://stackoverflow.com/questions/24933858/how-to-customize-font-size-in-ionic-framework*/
+.background {
+
+
+}
+
+
+ion-popover-view{
+opacity: 1;
+
+}
+.col {
+  background-color: #707070 !important;
+  opacity: .6;
+  /* This sets the background color*/
+}
+.item {
+  background-color: #707070 !important;
+  opacity: .7;
+  /* This sets the background color*/
+}
+
+.mid {
+  text-align: center;
+}
+@media (min-height: 0) {
+  h2 {
+    font-family: candara, sans-serif;
+    font-size: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 25px;
+    color: white
+  }
+  p {
+    font-family: candara, sans-serif;
+    font-size: normal;
+    font-style: italic;
+    font-weight: 50;
+    line-height: 21px;
+    color: white
+  }
+  span {
+    font-family: candara, sans-serif;
+    font-size: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: white
+  }
+}
+@media (min-height: 400px) {
+  h2 {
+    font-family: candara, sans-serif;
+    font-size: 2em;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 18.7px;
+    color: white
+  }
+  p {
+    font-family: candara, sans-serif;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: 50;
+    line-height: 21px;
+    color: white
+  }
+  span {
+    font-family: candara, sans-serif;
+    font-size: 1em;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: white
+  }
+}
+@media (min-height: 550px) {
+  h2 {
+    font-family: candara, sans-serif;
+    font-size: 2.5em;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 40px;
+    color: white
+  }
+  p {
+    font-family: candara, sans-serif;
+    font-size: 1.5em;
+    font-style: italic;
+    font-weight: 50;
+    line-height: 21px;
+    color: white
+  }
+  span {
+    font-family: candara, sans-serif;
+    font-size: 1.5em;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: white
+  }
+}
+@media(min-height: 700px) {
+  h2 {
+    font-family: candara, sans-serif;
+    font-size: 3em;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 50px;
+    color: white
+  }
+
+  .item h2 {
+    font-family: candara, sans-serif;
+    font-size: 2em;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 50px;
+    color: white
+  }
+  p {
+    font-family: candara, sans-serif;
+    font-size:2em;
+    font-style: italic;
+    font-weight: 50;
+    line-height: 25px;
+    color: white
+  }
+  span {
+    font-family: candara, sans-serif;
+    font-size: 2em;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: white
+  }
+
+}
+
+.mid {
+  text-align: center;
+}
